@@ -1,4 +1,4 @@
-# PHP Number to words on kazakh lang converter
+# PHP Number to words in kazakh language converter
 
 [![Travis](https://travis-ci.org/kwn/number-to-words.svg?branch=master)](https://travis-ci.org/kwn/number-to-words)
 
