@@ -1,0 +1,21 @@
+{
+    "name": "Mr-Ereke/kz_number_to_words",
+    "authors": [
+        {
+            "name": "Mr Ereke",
+            "email": "erdik96@mail.ru"
+        }
+    ],
+    "description": "Kazakh-speaking stand-alone PHP number to words converter",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["number", "numbers", "to", "words", "string"],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "KzNumberToWords\\": "src"
+        }
+    }
+}
