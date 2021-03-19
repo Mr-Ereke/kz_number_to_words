@@ -16,5 +16,6 @@
         "psr-4": {
             "KzNumberToWords\\": "src"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
