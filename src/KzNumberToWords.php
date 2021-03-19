@@ -90,7 +90,7 @@ class KzNumberToWords
 
     private function handle(): void
     {
-        $numberDividedArray = array_reverse(explode(",", number_format($this->number)));
+        $numberDividedArray = array_reverse(explode(',', number_format($this->number)));
         krsort($numberDividedArray, SORT_NUMERIC);
 
         foreach ($numberDividedArray as $index => $numberPart) {
