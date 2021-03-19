@@ -6,6 +6,12 @@
             "email": "erdik96@mail.ru"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Mr-Ereke/kz_number_to_words.git"
+        }
+    ],
     "description": "Kazakh-speaking stand-alone PHP number to words converter",
     "type": "library",
     "minimum-stability": "dev",
