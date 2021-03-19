@@ -20,6 +20,7 @@ class KzNumberToWords
         '8' => 'сегіз',
         '9' => 'тоғыз',
     ];
+
     const NUMBER_TENS_LIST = [
         '1' => 'он',
         '2' => 'жиырма',
@@ -31,12 +32,14 @@ class KzNumberToWords
         '8' => 'сексен',
         '9' => 'тоқсан',
     ];
+
     const NUMBER_HUNDREDS_LIST = [
         'жүз',
         'мың',
         'миллион',
         'миллиард',
     ];
+
     /**
      * @var int
      */
