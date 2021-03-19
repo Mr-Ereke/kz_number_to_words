@@ -9,7 +9,7 @@ This library allows you to convert a number to words.
 Add package to your composer.json by running:
 
 ```
-$ composer require Mr-Ereke/kz_number_to_words
+$ composer require mr-ereke/kz_number_to_words
 ```
 
 
