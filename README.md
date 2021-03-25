@@ -1,6 +1,9 @@
 # PHP Number to words in kazakh language converter
 
-[![Travis](https://travis-ci.org/kwn/number-to-words.svg?branch=master)](https://travis-ci.org/kwn/number-to-words)
+[![Latest Stable Version](https://poser.pugx.org/mr-ereke/kz_number_to_words/v)](//packagist.org/packages/mr-ereke/kz_number_to_words)
+[![Total Downloads](https://poser.pugx.org/mr-ereke/kz_number_to_words/downloads)](//packagist.org/packages/mr-ereke/kz_number_to_words)
+[![License](https://poser.pugx.org/mr-ereke/kz_number_to_words/license)](//packagist.org/packages/mr-ereke/kz_number_to_words)
+
 
 This library allows you to convert a number to words.
 
