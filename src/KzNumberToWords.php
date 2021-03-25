@@ -44,10 +44,12 @@ class KzNumberToWords
      * @var int
      */
     private int $number;
+
     /**
      * @var string
      */
     private string $word = '';
+
     /**
      * @var bool
      */
@@ -142,9 +144,11 @@ class KzNumberToWords
                 . ' '
                 . self::NUMBER_HUNDREDS_LIST[ 0 ];
         }
+
         if (substr($numberPart, 1, 1) != '0') {
             $this->word .= ' ' . Arr::get(self::NUMBER_TENS_LIST, substr($numberPart, 1, 1));
         }
+
         if (substr($numberPart, 2, 1) != '0') {
             $this->word .= ' ' . Arr::get(self::NUMBER_ONES_LIST, substr($numberPart, 2, 1));
         }
