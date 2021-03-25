@@ -4,7 +4,6 @@
 [![Total Downloads](https://poser.pugx.org/mr-ereke/kz_number_to_words/downloads)](//packagist.org/packages/mr-ereke/kz_number_to_words)
 [![License](https://poser.pugx.org/mr-ereke/kz_number_to_words/license)](//packagist.org/packages/mr-ereke/kz_number_to_words)
 
-
 This library allows you to convert a number to words.
 
 ## Installation
@@ -14,7 +13,6 @@ Add package to your composer.json by running:
 ```
 $ composer require mr-ereke/kz_number_to_words
 ```
-
 
 ## Usage
 
