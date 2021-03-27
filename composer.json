@@ -17,5 +17,13 @@
         "psr-4": {
             "KzNumberToWords\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KzNumberToWords\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }

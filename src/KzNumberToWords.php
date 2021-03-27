@@ -7,7 +7,7 @@ namespace KzNumberToWords;
  *
  * @package KzNumberToWords
  */
-class KzNumberToWords
+final class KzNumberToWords
 {
     const NUMBER_ONES_LIST = [
         '1' => 'бір',

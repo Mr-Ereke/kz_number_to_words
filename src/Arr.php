@@ -2,7 +2,7 @@
 
 namespace KzNumberToWords;
 
-class Arr
+final class Arr
 {
     /**
      * @param array $array
