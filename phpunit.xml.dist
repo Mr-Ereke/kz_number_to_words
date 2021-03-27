@@ -4,14 +4,32 @@
             <directory>tests/</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
+
+    <coverage includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+
+        <exclude>
+            <file>src/Arr.php</file>
+        </exclude>
+
+        <report>
+            <clover outputFile="build/report/clover.xml"/>
+            <html outputDirectory="build/report/coverage" lowUpperBound="50" highLowerBound="90"/>
+            <php outputFile="build/report/coverage.php"/>
+            <text outputFile="build/report/coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+            <xml outputDirectory="build/report/xml-coverage"/>
+        </report>
+    </coverage>
+
     <logging>
-        <log type="coverage-text" target="php://stdout" lowUpperBound="50" highLowerBound="75"/>
-        <log type="coverage-html" target="build/logs/coverage" highlight="true" lowUpperBound="50" highLowerBound="75"/>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <testdoxHtml outputFile="build/logs/testdox.html"/>
+        <testdoxText outputFile="build/logs/testdox.txt"/>
+        <testdoxXml outputFile="build/logs/testdox.xml"/>
+        <text outputFile="build/logs/logfile.txt"/>
     </logging>
 </phpunit>
