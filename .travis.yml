@@ -1,21 +1,20 @@
+env:
+  global:
+  - secure: w+qfSPr9URCM57dysqAwaEFVDKTVkXWkY6EsG0cIgFBbUcS4spBeHWnlkKjqLG/o7NJObOBpM3SIJG71TOhwHl85MCOM0p9sZIj23MBPRrhq6ivir+Ov/ty7m1ZQlkDO77unKGQej/EI+jIxCcLARHtzlMbszCyekPNkBWgFfayWIL0yUB42ZW4ur3SmYhINDDHGFDsrV4kOaRUKVZePfNKVmwHQWQ/NqVddKyCByzwiCxyv3gpGUIHxtRLu4rVBaS9qtiQZsTdz2dKdnrvAHtNLP7Q8x/0AZCHFPfTq+KAIywghl8dOPxQ5IoC9OIeQn0tveusXQCrA4wi4oBzIFVF03lpGXyqTHY8YDiFLFPKNC52KNA4496H6exfA81iUduHYzkOuJkhfvC5Zr3pokLp/iWI3xTGiMgM8owFBN5XARt6hmC/u9k6OSNlBs+po7PEmbd7PE0EmtONcD4o78yWuB6mgT4/8bEtZOcnsEXs3aLREAd8aqJi6i8WQDy3z7yYf3LGP0+MNCwl3M4n8kPdkxaxcM1xcAu0js+1iZaY9hYEXymC3J4Qi3Xy3sj5e6PsMDlVqa2zGj8FCL0NRvMVergBwYM6AGabeIqZha24hMMBTgLVpTr+OOJ4wtGHOtM6GPFMAZjzWaEPUsSOFBb2e6XyXQNNaJEMDdmxulP8=
 language: php
-
 php:
-  - "7.4"
-
+- '7.4'
 install:
-  - composer install
-
+- composer install
 before_script:
-  - GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
-  - GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
-  - phpenv config-add xdebug.ini
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ~/cc-test-reporter
-  - chmod a+x ~/cc-test-reporter
-  - ~/cc-test-reporter before-build
-
+- GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
+- GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+- phpenv config-add xdebug.ini
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ~/cc-test-reporter
+- chmod a+x ~/cc-test-reporter
+- "~/cc-test-reporter before-build"
 script:
-  - make build
-
+- make build
 after_script:
-  - ~/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "~/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
