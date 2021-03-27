@@ -2,6 +2,11 @@
 
 namespace KzNumberToWords;
 
+use ArrayAccess;
+
+/**
+ * Class Arr
+ */
 final class Arr
 {
     /**
@@ -35,7 +40,9 @@ final class Arr
      */
     public static function accessible($value): bool
     {
-        return is_array($value);
+        $isArray = is_array($value);
+
+        return $isArray;
     }
 
     /**
@@ -46,7 +53,7 @@ final class Arr
      */
     public static function exists($array, $key): bool
     {
-        if ($array instanceof \ArrayAccess) {
+        if ($array instanceof ArrayAccess) {
             return $array->offsetExists($key);
         }
 
