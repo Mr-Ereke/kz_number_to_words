@@ -7,6 +7,8 @@ install:
   - composer install
 
 before_script:
+  - GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
+  - GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
   - phpenv config-add xdebug.ini
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ~/cc-test-reporter
   - chmod a+x ~/cc-test-reporter
@@ -16,4 +18,4 @@ script:
   - make build
 
 after_script:
-  - ~/cc-test-reporter after-build --exit-code 0
+  - ~/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
