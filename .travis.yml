@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=663c7b027ae8bb583a674e8aa9787d0046d1d7c143772eb7881a834b27614d7a
+  - secure: wZ8LPo6X/S5DeG7RadE/wOcokKrVjkaRkylA9cY1udKH78GM0Qvjf3pCM2a5ZsfWLtXRQYP6d8x32Y3cK68QbIz1t0Ts/lXI0gv8KIYOQJ9XFZElnCzaYw7l54gkDTqtpCSsmyGnQYaj8edaFBamMVS8xOYeyYbi+dE/878PsAJnchtPpWd6opGPsK63rkqOvaSskcWSeiaviLJ5ymMYSXBZ03GdVSZ3VDL8/bprjc5aGYUhhEwgx7VTBWGbhD7LMPSXInaqGubk9uVoCmbhyxnvvxUDbNIZA7hOz9JRQCAlBiV42jSErkzcmmG5aYrtw45oAJiLA+b0Rji+ykxsSU3bnal+M/NgymJzhJRP4VyfUUHO+1wzm3u/tKFCcyHmXX9KlpmMXJEsm7lVKZPa6gAOjMlbx6tyYqqGGi5ceXqTZHn794G9AQJFUVITGM88r94T6hjTxBU+qp7CRLMWvZsigR6PZQs8QYikkSuzacbBJZzntezIFeVLUZShEz7g5V+Eoxy6F3n0Pe2EWlKw7HgwbQegao7swQPoMEMQb8/14CeaRlkTHd438MuilnAjptGXLIsl9wB4XJPv6UKNpi/mAaMDvxyaFYEwAzSSeMUaC13BlLOow46sr8MhrVRNe9aNTEeTgpe27iPfK8zi7PW3HH6HdKJnE2aZzolHjYw=
 language: php
 php:
 - '7.4'
@@ -10,10 +10,11 @@ before_script:
 - GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
 - GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
 - phpenv config-add xdebug.ini
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ~/cc-test-reporter
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ~/cc-test-reporter
 - chmod a+x ~/cc-test-reporter
-- ./cc-test-reporter before-build
+- "./cc-test-reporter before-build"
 script:
 - make build
 after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
