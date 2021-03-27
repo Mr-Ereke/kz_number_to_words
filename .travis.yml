@@ -1,26 +1,22 @@
 env:
   global:
-    - secure: wZ8LPo6X/S5DeG7RadE/wOcokKrVjkaRkylA9cY1udKH78GM0Qvjf3pCM2a5ZsfWLtXRQYP6d8x32Y3cK68QbIz1t0Ts/lXI0gv8KIYOQJ9XFZElnCzaYw7l54gkDTqtpCSsmyGnQYaj8edaFBamMVS8xOYeyYbi+dE/878PsAJnchtPpWd6opGPsK63rkqOvaSskcWSeiaviLJ5ymMYSXBZ03GdVSZ3VDL8/bprjc5aGYUhhEwgx7VTBWGbhD7LMPSXInaqGubk9uVoCmbhyxnvvxUDbNIZA7hOz9JRQCAlBiV42jSErkzcmmG5aYrtw45oAJiLA+b0Rji+ykxsSU3bnal+M/NgymJzhJRP4VyfUUHO+1wzm3u/tKFCcyHmXX9KlpmMXJEsm7lVKZPa6gAOjMlbx6tyYqqGGi5ceXqTZHn794G9AQJFUVITGM88r94T6hjTxBU+qp7CRLMWvZsigR6PZQs8QYikkSuzacbBJZzntezIFeVLUZShEz7g5V+Eoxy6F3n0Pe2EWlKw7HgwbQegao7swQPoMEMQb8/14CeaRlkTHd438MuilnAjptGXLIsl9wB4XJPv6UKNpi/mAaMDvxyaFYEwAzSSeMUaC13BlLOow46sr8MhrVRNe9aNTEeTgpe27iPfK8zi7PW3HH6HdKJnE2aZzolHjYw=
-
+    secure: CB975lU17lv++LzgSbWRDe7o7WfRHRhxZYVxGXA+N1UX4OCu7ozLNmVngUtTv3neOHAt56ndK8vIiBeHoRYSoa4IOKpDsh7qdLzq1mLC/K5hvgv6tnM9WIRaHrvTuIwG8osNAoML9I6unHM5zbaG0UyIgwoVD4hTilPZDR8dHsm+kmpwKFcKzbVlWn41izlE7IwBDvM96MslndBI57psNEO+RefXuYnhtJqkq3XtKIFirYKomtUiE0Rgy/ScDBQ+QS443OTbMZf4q5r8p9vsDTegfMbn8EdRjwDCYZoBYSTwuq2190sZYmsQ2JJH8N4J+/YoPrCuYSp94QlA2Vkz7mib5Mk9URlSJOdzFUHp2oVQwP/KKvj9y7tFVwKAv5fK2RQmnqlBB5RB2vo00qVCIjJoqwNjcoMj5sR9ipx+X5ibt4d+DcAjS1RSqi+KcEuvbwZ2PgLq2c/48YFi3C63+FPttYM62edokyihrNq/TqU/2ojPQw+W4UWEGNrMhnRtQWxOnywo1r0GHDwn0UzMIYwNjwSBRQ1KXlodxv6u75d7TQItO9sQ4BF2hFo3zKw6+lAIfHGLOMArkUu/qPmpmPXXE77rs11ZgyOgFGwYsxV2H89G4I0zIb+Bs+DqLvkv5DK4YeP8jJSL6C/YCdlNiFcNx9imePvH2QGMJYcvoPY=
 language: php
-
 php:
-  - '7.4'
-
+- 7.4
 install:
-  - composer self-update
-  - composer install
-
+- composer self-update
+- composer install
 before_script:
-  - GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
-  - GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
-  - phpenv config-add xdebug.ini
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ~/cc-test-reporter
-  - chmod a+x ~/cc-test-reporter
-  - ~/cc-test-reporter before-build
-
+- GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
+- GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+- phpenv config-add xdebug.ini
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ~/cc-test-reporter
+- chmod a+x ~/cc-test-reporter
+- "~/cc-test-reporter before-build"
 script:
-  - make build
-
+- make build
 after_script:
-  - ~/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "~/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+
