@@ -40,9 +40,7 @@ final class Arr
      */
     public static function accessible($value): bool
     {
-        $isArray = is_array($value);
-
-        return $isArray;
+        return is_array($value);
     }
 
     /**

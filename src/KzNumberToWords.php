@@ -56,29 +56,50 @@ final class KzNumberToWords
     private bool $isNegative = false;
 
     /**
-     * NumberWordConverterKz constructor.
+     * @param int|null $number
      *
-     * @param int $number
+     * @return string
      */
-    public function __construct(int $number)
+    public function getWord(?int $number = null): string
     {
-        $this->number = $number;
+        $this->init($number);
+        $this->handle();
+
+        return $this->word;
     }
 
     /**
-     * @return string
+     * @param int $number
+     *
+     * @return $this
      */
-    public function getWord(): string
+    public function setNumber(int $number): self
     {
+        $this->number = $number;
+        return $this;
+    }
+
+    private function init($number): void
+    {
+        if (is_int($number)) {
+            $this->setNumber($number);
+        }
+    }
+
+    private function handle(): void
+    {
+        if (!isset($this->number)) {
+            return;
+        }
+
         if ($this->number === 0) {
-            return 'нөл';
+            $this->word = 'нөл';
+            return;
         }
 
         $this->absoluteNumber();
-        $this->handle();
+        $this->transform();
         $this->format();
-
-        return $this->word;
     }
 
     private function format(): void
@@ -90,7 +111,7 @@ final class KzNumberToWords
         }
     }
 
-    private function handle(): void
+    private function transform(): void
     {
         $numberDividedArray = array_reverse(explode(',', number_format($this->number)));
         krsort($numberDividedArray, SORT_NUMERIC);
