@@ -22,19 +22,25 @@ $ composer require mr-ereke/kz_number_to_words "^1.1"
 
 Need to create an instance of `KzNumberToWords` class and then call a method to get words;
 
-### Example
-
+### Example 1
 ```php
 use KzNumberToWords\KzNumberToWords;
 
-// Создаем инстанс класса передавая обязательный параметр целочисленного типа (можно отрицательный) 
+// Создаем инстанс класса 
 $kzNumberToWords = new KzNumberToWords();
 
-// (Optional) Можем засетить число передав обязательный параметр целочисленного типа (можно отрицательный) 
+// (Optional) Можно засетить число передав обязательный параметр целочисленного типа (можно отрицательный) 
 $kzNumberToWords->setNumber(745123);
-//Для конвертации вызываем метод "getWord", который возвращем строку, 
+//Для конвертации вызываем метод "getWord", который возвращем строку
 $kzNumberToWords->getWord(); // выведет "жеті жүз қырық бес мың бір жүз жиырма үш"
+```
 
-//Можно сразу вызвать метод "getWord" и передать число для конвертации
+### Example 2
+```php
+use KzNumberToWords\KzNumberToWords;
+// Создаем инстанс класса
+$kzNumberToWords = new KzNumberToWords();
+
+//Можно сразу вызвать метод "getWord" передав число для конвертации
 $kzNumberToWords->getWord(987123456); // выведет "тоғыз жүз сексен жеті миллион бір жүз жиырма үш мың төрт жүз елу алты"
 ```
