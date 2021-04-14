@@ -1,4 +1,10 @@
 <phpunit bootstrap="vendor/autoload.php" colors="true" verbose="true">
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="xdebug.mode" value="coverage" />
+        <env name="XDEBUG_MODE" value="coverage" />
+    </php>
+
     <testsuites>
         <testsuite name="Number to kazakh words tests">
             <directory>tests/</directory>
