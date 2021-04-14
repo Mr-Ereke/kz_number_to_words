@@ -1,4 +1,14 @@
-<phpunit bootstrap="vendor/autoload.php" colors="true" verbose="true">
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         verbose="true">
     <php>
         <ini name="error_reporting" value="-1" />
         <ini name="xdebug.mode" value="coverage" />
@@ -7,7 +17,7 @@
 
     <testsuites>
         <testsuite name="Number to kazakh words tests">
-            <directory>tests/</directory>
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
 
