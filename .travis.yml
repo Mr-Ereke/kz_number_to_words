@@ -1,6 +1,7 @@
 env:
   global:
-    secure: CB975lU17lv++LzgSbWRDe7o7WfRHRhxZYVxGXA+N1UX4OCu7ozLNmVngUtTv3neOHAt56ndK8vIiBeHoRYSoa4IOKpDsh7qdLzq1mLC/K5hvgv6tnM9WIRaHrvTuIwG8osNAoML9I6unHM5zbaG0UyIgwoVD4hTilPZDR8dHsm+kmpwKFcKzbVlWn41izlE7IwBDvM96MslndBI57psNEO+RefXuYnhtJqkq3XtKIFirYKomtUiE0Rgy/ScDBQ+QS443OTbMZf4q5r8p9vsDTegfMbn8EdRjwDCYZoBYSTwuq2190sZYmsQ2JJH8N4J+/YoPrCuYSp94QlA2Vkz7mib5Mk9URlSJOdzFUHp2oVQwP/KKvj9y7tFVwKAv5fK2RQmnqlBB5RB2vo00qVCIjJoqwNjcoMj5sR9ipx+X5ibt4d+DcAjS1RSqi+KcEuvbwZ2PgLq2c/48YFi3C63+FPttYM62edokyihrNq/TqU/2ojPQw+W4UWEGNrMhnRtQWxOnywo1r0GHDwn0UzMIYwNjwSBRQ1KXlodxv6u75d7TQItO9sQ4BF2hFo3zKw6+lAIfHGLOMArkUu/qPmpmPXXE77rs11ZgyOgFGwYsxV2H89G4I0zIb+Bs+DqLvkv5DK4YeP8jJSL6C/YCdlNiFcNx9imePvH2QGMJYcvoPY=
+    - CC_TEST_REPORTER_ID=9aa3511a223c23a8dab87ed39331267e7ccd9fd7f330605d2be4eaf8010a2315
+    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
 language: php
 php:
 - 7.4
@@ -8,15 +9,12 @@ install:
 - composer self-update
 - composer install
 before_script:
-- GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
-- GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
-- phpenv config-add xdebug.ini
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-  > ~/cc-test-reporter
-- chmod a+x ~/cc-test-reporter
-- "~/cc-test-reporter before-build"
+  - GIT_COMMIT_SHA=$TRAVIS_PULL_REQUEST_SHA
+  - GIT_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+  - phpenv config-add xdebug.ini
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
 - make build
-after_script:
-- "~/cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 
