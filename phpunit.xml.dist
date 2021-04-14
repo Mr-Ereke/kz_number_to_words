@@ -24,7 +24,8 @@
     <coverage includeUncoveredFiles="true"
               processUncoveredFiles="true"
               ignoreDeprecatedCodeUnits="true"
-              disableCodeCoverageIgnore="true">
+              disableCodeCoverageIgnore="true"
+              pathCoverage="true">
         <include>
             <directory suffix=".php">src</directory>
         </include>
