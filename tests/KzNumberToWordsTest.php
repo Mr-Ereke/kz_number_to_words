@@ -10,7 +10,7 @@ final class KzNumberToWordsTest extends TestCase
     {
         $kzNumberToWords = new KzNumberToWords();
         $word = $kzNumberToWords->setNumber(4000000000000)->getWord();
-        $this->assertEquals('төрт миллиард', $word);
+        $this->assertEquals('төрт', $word);
     }
 
     public function testValidGetWordsFromBillionNumber(): void
