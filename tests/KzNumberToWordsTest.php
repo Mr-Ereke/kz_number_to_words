@@ -6,11 +6,32 @@ use PHPUnit\Framework\TestCase;
 
 final class KzNumberToWordsTest extends TestCase
 {
-    public function testValidGetWordsFromNumber(): void
+    public function testValidGetWordsFromOverBillionNumber(): void
     {
         $kzNumberToWords = new KzNumberToWords();
-        $word = $kzNumberToWords->getWord(852741);
-        $this->assertEquals('сегіз жүз елу екі мың жеті жүз қырық бір', $word);
+        $word = $kzNumberToWords->setNumber(4000000000000)->getWord();
+        $this->assertEquals('төрт миллиард', $word);
+    }
+
+    public function testValidGetWordsFromBillionNumber(): void
+    {
+        $kzNumberToWords = new KzNumberToWords();
+        $word = $kzNumberToWords->setNumber(9000000000)->getWord();
+        $this->assertEquals('тоғыз миллиард', $word);
+    }
+
+    public function testValidGetWordsFromThousandNumber(): void
+    {
+        $kzNumberToWords = new KzNumberToWords();
+        $word = $kzNumberToWords->getWord(702041);
+        $this->assertEquals('жеті жүз екі мың қырық бір', $word);
+    }
+
+    public function testValidGetWordsFromTenNumber(): void
+    {
+        $kzNumberToWords = new KzNumberToWords();
+        $word = $kzNumberToWords->getWord(8);
+        $this->assertEquals('сегіз', $word);
     }
 
     public function testValidGetZero(): void

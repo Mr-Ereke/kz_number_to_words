@@ -17,18 +17,9 @@
 
     <testsuites>
         <testsuite name="Number to kazakh words tests">
-            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src</directory>
-            <exclude>
-                <file>./src/Arr.php</file>
-            </exclude>
-        </whitelist>
-    </filter>
 
     <logging>
         <testdoxHtml outputFile="build/logs/testdox.html"/>
@@ -39,7 +30,7 @@
 
     <coverage includeUncoveredFiles="true" processUncoveredFiles="true" ignoreDeprecatedCodeUnits="true" disableCodeCoverageIgnore="true" pathCoverage="true">
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory suffix=".php">src</directory>
         </include>
 
         <exclude>
