@@ -16,7 +16,7 @@ This library allows you to convert a number to words.
 Add package to your composer.json by running:
 
 ```
-$ composer require mr-ereke/kz_number_to_words "^1.1"
+$ composer require mr-ereke/kz_number_to_words "^1.2"
 ```
 
 ## Usage
