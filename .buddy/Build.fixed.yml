@@ -10,7 +10,7 @@
   - action: composer install
     type: BUILD
     docker_image_name: library/php
-    docker_image_tag: 8.4
+    docker_image_tag: 8.3
     execute_commands:
     - composer validate
     - composer install
