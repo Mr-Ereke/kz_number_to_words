@@ -6,6 +6,7 @@ use ArrayAccess;
 
 /**
  * Class Arr
+ * @codeCoverageIgnore
  */
 final class Arr
 {

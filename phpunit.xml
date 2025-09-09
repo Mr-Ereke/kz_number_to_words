@@ -23,12 +23,10 @@
         </include>
     </source>
 
-    <coverage includeUncoveredFiles="true"
-              pathCoverage="false"
-              ignoreDeprecatedCodeUnits="true"
-              disableCodeCoverageIgnore="true">
+    <coverage>
         <report>
             <clover outputFile="coverage.xml"/>
+            <html outputDirectory="html-coverage" lowUpperBound="50" highLowerBound="90"/>
         </report>
     </coverage>
 

@@ -58,4 +58,11 @@ final class KzNumberToWordsTest extends TestCase
         $word = $kzNumberToWords->getWord();
         $this->assertEquals('', $word);
     }
+
+    public function testValidNumberHundredList(): void
+    {
+        $kzNumberToWords = new KzNumberToWords();
+        $word = $kzNumberToWords->getWord(10000000000000000);
+        $this->assertEquals('он', $word);
+    }
 }

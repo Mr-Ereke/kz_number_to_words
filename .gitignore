@@ -4,3 +4,4 @@ composer.lock
 /vendor
 /build
 coverage.xml
+html-coverage/
