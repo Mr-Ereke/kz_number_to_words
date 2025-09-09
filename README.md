@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Mr-Ereke/kz_number_to_words.svg?branch=main)](https://travis-ci.com/Mr-Ereke/kz_number_to_words)
 [![Maintainability](https://api.codeclimate.com/v1/badges/06893bf91038524b45d0/maintainability)](https://codeclimate.com/github/Mr-Ereke/kz_number_to_words/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/06893bf91038524b45d0/test_coverage)](https://codeclimate.com/github/Mr-Ereke/kz_number_to_words/test_coverage)
+[![codecov](https://codecov.io/github/codecov/example-php/branch/main/graph/badge.svg?token=A7Mb0qlkNW)](https://app.codecov.io/github/codecov/example-php)
 [![Latest Stable Version](https://poser.pugx.org/mr-ereke/kz_number_to_words/v)](//packagist.org/packages/mr-ereke/kz_number_to_words)
 [![License](https://poser.pugx.org/mr-ereke/kz_number_to_words/license)](//packagist.org/packages/mr-ereke/kz_number_to_words)
 [![Total Downloads](https://poser.pugx.org/mr-ereke/kz_number_to_words/downloads)](//packagist.org/packages/mr-ereke/kz_number_to_words)
