@@ -3,7 +3,11 @@
 namespace KzNumberToWords;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 
+#[CoversClass(KzNumberToWords::class)]
+#[UsesClass(Arr::class)]
 final class KzNumberToWordsTest extends TestCase
 {
     public function testValidGetWordsFromOverBillionNumber(): void
